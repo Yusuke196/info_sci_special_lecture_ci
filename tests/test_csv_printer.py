@@ -22,3 +22,8 @@ class TestCSVPrinter(unittest.TestCase):
         with self.assertRaises(FileNotFoundError):
             printer_2 = CSVPrinter('not_existing_file.csv')
             printer_2.read()
+
+    def test_four(self):
+        with self.assertRaises(Exception, msg='This is TSV'):
+            printer_3 = CSVPrinter('sample.tsv')
+            printer_3.read()
